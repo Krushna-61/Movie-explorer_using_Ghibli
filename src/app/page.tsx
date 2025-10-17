@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { getPopularMovies, searchMovies, TmdbMovie } from "../lib/tmdb";
 import MovieCard from "../components/MovieCard";
 import MovieSkeleton from "../components/MovieSkeleton";
 import { useSearchParams } from "next/navigation";
 
-export default function Home() {
+function HomeInner() {
   const searchParams = useSearchParams();
   const query = searchParams?.get("q") ?? "";
   const [page, setPage] = useState(1);
@@ -67,5 +67,13 @@ export default function Home() {
         )}
       </div>
     </main>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<main className="max-w-6xl mx-auto px-4 py-6"><div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">{Array.from({ length: 8 }).map((_, i) => <MovieSkeleton key={`sf-${i}`} />)}</div></main>}>
+      <HomeInner />
+    </Suspense>
   );
 }
