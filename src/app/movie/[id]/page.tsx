@@ -6,11 +6,12 @@ type Props = { params: { id: string } };
 export default async function MovieDetail({ params }: Props) {
   const movie = await getMovie(params.id);
   const poster = getPosterUrl(movie.poster_path, "w500");
+  const POSTER_SIZE = 500 as const;
 
   return (
     <main className="max-w-5xl mx-auto px-4 py-6 grid md:grid-cols-[300px_1fr] gap-6">
       <div>
-        <Poster url={poster} title={movie.title} size={500 as 500} />
+        <Poster url={poster} title={movie.title} size={POSTER_SIZE} />
       </div>
       <div className="space-y-3">
         <h1 className="text-3xl font-bold">{movie.title}</h1>
