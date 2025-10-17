@@ -23,8 +23,8 @@ function getApiKey(): string {
     if (v && v !== "undefined" && v !== "null") return v;
   }
   if (typeof window !== "undefined") {
-    // @ts-expect-error
-    const key = (window as any).TMDB_API_KEY;
+    // @ts-expect-error - injected at runtime for demos
+    const key = (window as unknown as { TMDB_API_KEY?: string }).TMDB_API_KEY;
     if (key && key !== "undefined" && key !== "null") return key as string;
   }
   return "";

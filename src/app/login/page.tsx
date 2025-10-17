@@ -22,8 +22,9 @@ export default function LoginPage() {
       const { token, user } = await loginAction({ email, password });
       login(token, user);
       router.replace("/");
-    } catch (err: any) {
-      setError(err?.message ?? "Login failed");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Login failed";
+      setError(message);
     } finally {
       setLoading(false);
     }
