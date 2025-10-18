@@ -62,16 +62,14 @@ async function fetchGhibliFilms(): Promise<GhibliFilm[]> {
       if (res.ok) {
         return (await res.json()) as GhibliFilm[];
       }
-    } catch (err) {
-      // ignore and try next
-      // eslint-disable-next-line no-console
-      console.warn(`Ghibli fetch failed for ${base}:`, err);
+      } catch (err) {
+        // ignore and try next
+        console.warn(`Ghibli fetch failed for ${base}:`, err);
     }
   }
   // Last resort: return empty array to avoid throwing a runtime TypeError
   // during client-side fetches when the public API is unreachable.
   // Consumers will see an empty list.
-  // eslint-disable-next-line no-console
   console.warn("Ghibli API appears to be unreachable; returning empty dataset.");
   return [];
 }
