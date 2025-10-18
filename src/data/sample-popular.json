@@ -1,0 +1,71 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "id": 1001,
+      "title": "Sample Movie One",
+      "overview": "An example movie used when the real API is unavailable.",
+      "poster_path": null,
+      "vote_average": 7.2,
+      "release_date": "2020-01-01"
+    },
+    {
+      "id": 1002,
+      "title": "Sample Movie Two",
+      "overview": "Second example movie used for development fallback.",
+      "poster_path": null,
+      "vote_average": 6.4,
+      "release_date": "2019-06-12"
+    },
+    {
+      "id": 1003,
+      "title": "Sample Movie Three",
+      "overview": "Third example movie used for development fallback.",
+      "poster_path": null,
+      "vote_average": 8.1,
+      "release_date": "2018-11-02"
+    },
+    {
+      "id": 1004,
+      "title": "Sample Movie Four",
+      "overview": "Fourth example movie used for development fallback.",
+      "poster_path": null,
+      "vote_average": 5.9,
+      "release_date": "2017-03-22"
+    },
+    {
+      "id": 1005,
+      "title": "Sample Movie Five",
+      "overview": "Fifth example movie used for development fallback.",
+      "poster_path": null,
+      "vote_average": 7.8,
+      "release_date": "2021-07-15"
+    },
+    {
+      "id": 1006,
+      "title": "Sample Movie Six",
+      "overview": "Sixth example movie used for development fallback.",
+      "poster_path": null,
+      "vote_average": 6.9,
+      "release_date": "2016-12-01"
+    },
+    {
+      "id": 1007,
+      "title": "Sample Movie Seven",
+      "overview": "Seventh example movie used for development fallback.",
+      "poster_path": null,
+      "vote_average": 8.6,
+      "release_date": "2015-09-09"
+    },
+    {
+      "id": 1008,
+      "title": "Sample Movie Eight",
+      "overview": "Eighth example movie used for development fallback.",
+      "poster_path": null,
+      "vote_average": 7.0,
+      "release_date": "2014-04-18"
+    }
+  ],
+  "total_pages": 1,
+  "total_results": 8
+}

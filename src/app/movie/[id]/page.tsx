@@ -1,5 +1,6 @@
 import Poster from "../../../components/Poster";
 import { getMovie, getPosterUrl } from "../../../lib/tmdb";
+import FavoriteToggle from "../../../components/FavoriteToggle";
 
 type Props = { params: { id: string } };
 
@@ -17,6 +18,7 @@ export default async function MovieDetail({ params }: Props) {
         <h1 className="text-3xl font-bold">{movie.title}</h1>
         <div className="text-sm opacity-80">Release: {movie.release_date}</div>
         <div className="text-sm">Rating: {movie.vote_average.toFixed(1)}</div>
+        <FavoriteToggle movieId={movie.id} />
         <p className="leading-7 whitespace-pre-wrap">{movie.overview}</p>
       </div>
     </main>

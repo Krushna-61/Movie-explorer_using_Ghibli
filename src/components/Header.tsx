@@ -15,6 +15,13 @@ export default function Header() {
   const [query, setQuery] = useState("");
   const [mounted, setMounted] = useState(false);
 
+  // NOTE: Auth state is client-only (loaded from localStorage in AuthProvider).
+  // To avoid a hydration mismatch where the server renders an unauthenticated
+  // UI but the client immediately shows the logged-in UI, we wait until the
+  // component is mounted and then render auth-dependent controls. Before
+  // mount we render a stable placeholder so server and initial client HTML
+  // match.
+
   useEffect(() => {
     setQuery(searchParams?.get("q") ?? "");
   }, [searchParams]);
@@ -78,11 +85,24 @@ export default function Header() {
               <span className="inline-block w-2.5 h-2.5 rounded-full bg-current opacity-60" />
             )}
           </button>
-          {isAuthenticated ? (
-            <button className="h-9 px-3 rounded border border-black/15 bg-white/60 text-black hover:bg-black/5 shadow-sm
-            dark:border-white/20 dark:bg-black dark:text-white dark:hover:bg-black/80" onClick={logout} title={user?.email}>Logout</button>
+          {mounted ? (
+            isAuthenticated ? (
+              <button
+                className="h-9 px-3 rounded border border-black/15 bg-white/60 text-black hover:bg-black/5 shadow-sm
+            dark:border-white/20 dark:bg-black dark:text-white dark:hover:bg-black/80"
+                onClick={logout}
+                title={user?.email}
+              >
+                Logout
+              </button>
+            ) : (
+              <Link className="underline" href="/login">
+                Login
+              </Link>
+            )
           ) : (
-            <Link className="underline" href="/login">Login</Link>
+            // Render a stable placeholder on server / before mount to avoid hydration mismatch
+            <div className="h-9 px-3 rounded" aria-hidden />
           )}
         </nav>
       </div>

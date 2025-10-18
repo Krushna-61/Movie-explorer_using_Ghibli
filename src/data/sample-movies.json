@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1000001,
+    "title": "Sample Movie One",
+    "overview": "A friendly sample movie used when external APIs are unavailable.",
+    "poster_path": "/sample1.jpg",
+    "vote_average": 7.8,
+    "release_date": "2020-01-01"
+  },
+  {
+    "id": 1000002,
+    "title": "Sample Movie Two",
+    "overview": "The second sample movie, included for local development and testing.",
+    "poster_path": "/sample2.jpg",
+    "vote_average": 6.4,
+    "release_date": "2019-06-15"
+  },
+  {
+    "id": 1000003,
+    "title": "Sample Movie Three",
+    "overview": "An adventurous sample entry with vivid imagination.",
+    "poster_path": "/sample3.jpg",
+    "vote_average": 8.1,
+    "release_date": "2021-11-05"
+  },
+  {
+    "id": 1000004,
+    "title": "Sample Movie Four",
+    "overview": "A small indie sample used for pagination testing.",
+    "poster_path": "/sample4.jpg",
+    "vote_average": 5.9,
+    "release_date": "2018-03-20"
+  },
+  {
+    "id": 1000005,
+    "title": "Sample Movie Five",
+    "overview": "Final sample movie to fill the demo grid.",
+    "poster_path": "/sample5.jpg",
+    "vote_average": 7.0,
+    "release_date": "2017-08-30"
+  }
+]
