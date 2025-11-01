@@ -1,5 +1,5 @@
-Movie Explorer using Ghibli
-A project to explore Ghibli movies, built with Next.js.
+Movie Explorer using TMDB
+A project to explore TMDB movies, built with Next.js.
 
 Getting Started
 To run this project locally, follow these steps.
@@ -12,7 +12,7 @@ Clone the repository:
 
 Bash
 git clone [YOUR REPOSITORY URL HERE]
-cd movie-explorer-using-ghibli
+cd movie-explorer-using-tmdb
 Install the dependencies:
 
 Bash
